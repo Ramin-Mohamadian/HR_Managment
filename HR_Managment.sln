@@ -15,7 +15,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastru
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UI", "UI", "{BF8900F6-E545-41A9-B04C-C8D31B9B5E0B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HR_Management.Domain", "HR_Management.Domain\HR_Management.Domain.csproj", "{044AA1BA-92B9-4B93-96B1-C357504D70F6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HR_Management.Domain", "HR_Management.Domain\HR_Management.Domain.csproj", "{044AA1BA-92B9-4B93-96B1-C357504D70F6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HR_Management.Application", "HR_Management.Application\HR_Management.Application.csproj", "{B4DED5FC-34EF-4125-8623-B5F699BB3C64}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{044AA1BA-92B9-4B93-96B1-C357504D70F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{044AA1BA-92B9-4B93-96B1-C357504D70F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{044AA1BA-92B9-4B93-96B1-C357504D70F6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B4DED5FC-34EF-4125-8623-B5F699BB3C64}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B4DED5FC-34EF-4125-8623-B5F699BB3C64}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B4DED5FC-34EF-4125-8623-B5F699BB3C64}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B4DED5FC-34EF-4125-8623-B5F699BB3C64}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -37,6 +43,7 @@ Global
 		{999498E9-7101-4070-8C90-EB80871DA548} = {F01A59AB-8023-48CD-9D13-CE9EF7171E04}
 		{BF8900F6-E545-41A9-B04C-C8D31B9B5E0B} = {F01A59AB-8023-48CD-9D13-CE9EF7171E04}
 		{044AA1BA-92B9-4B93-96B1-C357504D70F6} = {9EEE2948-2EFA-4189-A979-790D9D0C7E91}
+		{B4DED5FC-34EF-4125-8623-B5F699BB3C64} = {9EEE2948-2EFA-4189-A979-790D9D0C7E91}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {4B667CB9-796B-4FEE-8669-61B4902996BC}
