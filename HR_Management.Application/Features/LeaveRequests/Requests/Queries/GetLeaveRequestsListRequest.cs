@@ -1,4 +1,4 @@
-﻿using HR_Management.Application.Dtos;
+﻿using HR_Management.Application.Dtos.LeaveRequest;
 using MediatR;
 using System;
 using System.Collections.Generic;

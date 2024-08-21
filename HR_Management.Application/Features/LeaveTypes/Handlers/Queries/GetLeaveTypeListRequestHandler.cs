@@ -1,5 +1,5 @@
 ﻿using AutoMapper;
-using HR_Management.Application.Dtos;
+using HR_Management.Application.Dtos.LeaveTypes;
 using HR_Management.Application.Features.LeaveTypes.Requests.Queries;
 using HR_Management.Application.Persistence.Contracts;
 using MediatR;
