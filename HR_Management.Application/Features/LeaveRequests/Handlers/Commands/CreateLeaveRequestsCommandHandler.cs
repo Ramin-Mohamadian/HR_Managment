@@ -1,13 +1,8 @@
 ﻿using AutoMapper;
+using HR_Management.Application.Contracts.Persistences;
 using HR_Management.Application.Features.LeaveRequests.Requests.Commands;
-using HR_Management.Application.Persistence.Contracts;
 using HR_Management.Domain.Entiteis;
 using MediatR;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace HR_Management.Application.Features.LeaveRequests.Handlers.Commands
 {
