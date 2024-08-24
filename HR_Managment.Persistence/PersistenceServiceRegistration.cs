@@ -13,15 +13,15 @@ namespace HR_Managment.Persistence
         {
             services.AddDbContext<LeaveManagmentContext>(options =>
             {
-                options.UseSqlServer(configuration.GetConnectionString(""));
+                options.UseSqlServer(configuration.GetConnectionString("LeaveConnectionString"));
             });
 
             #region Ioc
             services.AddScoped(typeof(IGenericRepository<>),typeof(GenericRepository<>));
             services.AddScoped<ILeaveTypeRepository, LeaveTypeRepository>();
-            services.AddScoped<ILeaveRequestRepository, LeaveRequestRepository>();
-       
+            services.AddScoped<ILeaveRequestRepository, LeaveRequestRepository>();       
             #endregion
+
 
             return services;
         }
