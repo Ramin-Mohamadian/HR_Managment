@@ -45,20 +45,12 @@ namespace HR_Managment.Api.Controllers
             return Ok(response);
         }
 
-        // PUT api/<LeaveRequestController>/5
+        //PUT api/<LeaveRequestController>/5
         [HttpPut("{id}")]
-        public async Task<ActionResult> Put(int id, [FromBody] UpdateLeaveRequestDto updateLeaveRequestDto, ChangeLeaveRequestApprovalDto changeLeave)
+        public async Task<ActionResult> Put(int id, [FromBody] UpdateLeaveRequestDto updateLeaveRequestDto)
         {
-            if (updateLeaveRequestDto != null)
-            {
-                var command = await _mediator.Send(new UpdateLeaveRequestsCommand { UpdateLeaveRequestDto = updateLeaveRequestDto, Id = id });
-               
-            }
-            else if (changeLeave != null)
-            {
-                var change = await _mediator.Send(new UpdateLeaveRequestsCommand { Id = id, changeLeaveRequestApprovalDto = changeLeave });
-               
-            }
+
+            var command = await _mediator.Send(new UpdateLeaveRequestsCommand { UpdateLeaveRequestDto = updateLeaveRequestDto, Id = id });
             return NoContent();
         }
 
@@ -67,7 +59,7 @@ namespace HR_Managment.Api.Controllers
         public async Task<ActionResult> Delete(int id)
         {
             var command = await _mediator.Send(new DeleteLeaveRequestsCommand { Id = id });
-            
+
             return NoContent();
         }
     }

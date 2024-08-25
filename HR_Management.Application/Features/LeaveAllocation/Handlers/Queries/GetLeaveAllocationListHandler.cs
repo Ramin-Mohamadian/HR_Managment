@@ -6,7 +6,7 @@ using MediatR;
 
 namespace HR_Management.Application.Features.LeaveAllocation.Handlers.Queries
 {
-    public class GetLeaveAllocationListHandler : IRequestHandler<GetLeaveAllocationListRequest, List<LeaveAllocationDto>>
+    public class GetLeaveAllocationListHandler : IRequestHandler<GetLeaveAllocationListRequest, IEnumerable<LeaveAllocationDto>>
     {
 
         private readonly ILeaveAllocationRepository _leaveAllocationRepository;
@@ -17,7 +17,7 @@ namespace HR_Management.Application.Features.LeaveAllocation.Handlers.Queries
             _mapper = mapper;
 
         }
-        public async Task<List<LeaveAllocationDto>> Handle(GetLeaveAllocationListRequest request, CancellationToken cancellationToken)
+        public async Task<IEnumerable<LeaveAllocationDto>> Handle(GetLeaveAllocationListRequest request, CancellationToken cancellationToken)
         {
             var getlist=await _leaveAllocationRepository.GetAll();
             return _mapper.Map<List<LeaveAllocationDto>>(getlist);

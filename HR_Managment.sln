@@ -23,7 +23,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HR_Managment.Infrastructure
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HR_Managment.Persistence", "HR_Managment.Persistence\HR_Managment.Persistence.csproj", "{3421E722-225C-4A30-A474-60768761E1C9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HR_Managment.Api", "HR_Managment.Api\HR_Managment.Api.csproj", "{1659293A-156A-4C5D-8A28-9A66C771176C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HR_Managment.Api", "HR_Managment.Api\HR_Managment.Api.csproj", "{1659293A-156A-4C5D-8A28-9A66C771176C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HR_Managment.MVC", "HR_Managment.MVC\HR_Managment.MVC.csproj", "{DC906D64-9A5F-4B4E-A87F-1A635F171FA9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +53,10 @@ Global
 		{1659293A-156A-4C5D-8A28-9A66C771176C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1659293A-156A-4C5D-8A28-9A66C771176C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1659293A-156A-4C5D-8A28-9A66C771176C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DC906D64-9A5F-4B4E-A87F-1A635F171FA9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DC906D64-9A5F-4B4E-A87F-1A635F171FA9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DC906D64-9A5F-4B4E-A87F-1A635F171FA9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DC906D64-9A5F-4B4E-A87F-1A635F171FA9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -65,6 +71,7 @@ Global
 		{09141EB2-0364-46F2-9A69-239B27B973AA} = {999498E9-7101-4070-8C90-EB80871DA548}
 		{3421E722-225C-4A30-A474-60768761E1C9} = {999498E9-7101-4070-8C90-EB80871DA548}
 		{1659293A-156A-4C5D-8A28-9A66C771176C} = {44917ECB-F685-41AD-8427-39BA670E4D9C}
+		{DC906D64-9A5F-4B4E-A87F-1A635F171FA9} = {BF8900F6-E545-41A9-B04C-C8D31B9B5E0B}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {4B667CB9-796B-4FEE-8669-61B4902996BC}

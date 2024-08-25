@@ -1,6 +1,8 @@
 using HR_Management.Application;
+using HR_Management.Application.Contracts.Persistences;
 using HR_Managment.Infrastructure;
 using HR_Managment.Persistence;
+using HR_Managment.Persistence.Repositories;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -16,7 +18,6 @@ builder.Services.ConfigureApplicationService();
 builder.Services.ConfigureInfrastructureService(builder.Configuration);
 builder.Services.ConfigurationPersistenceService(builder.Configuration);
 #endregion
-
 
 builder.Services.AddCors(o =>
 {
@@ -39,6 +40,10 @@ app.UseHttpsRedirection();
 
 app.UseAuthorization();
 app.UseCors("corsepolicy");
-app.MapControllers();
+app.UseRouting();
+app.UseEndpoints(endpoints =>
+{
+    endpoints.MapControllers(); 
+});
 
 app.Run();
