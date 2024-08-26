@@ -1,7 +1,15 @@
+using HR_Managment.MVC.Services.Base;
+using Microsoft.Extensions.DependencyInjection;
+using System.Reflection;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+builder.Services.AddHttpClient<IClient, Client>(    
+    c => c.BaseAddress = new Uri(builder.Configuration.GetSection("ApiAddress").Value));
+builder.Services.AddAutoMapper(Assembly.GetExecutingAssembly());
 
 var app = builder.Build();
 
