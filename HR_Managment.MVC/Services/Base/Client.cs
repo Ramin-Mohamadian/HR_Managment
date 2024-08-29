@@ -1,5 +1,4 @@
-﻿
-namespace HR_Managment.MVC.Services.Base
+﻿namespace HR_Managment.MVC.Services.Base
 {
     public partial class Client : IClient
     {
@@ -9,7 +8,7 @@ namespace HR_Managment.MVC.Services.Base
             {
                 return _httpClient;
             }
-           
+
         }
     }
 }

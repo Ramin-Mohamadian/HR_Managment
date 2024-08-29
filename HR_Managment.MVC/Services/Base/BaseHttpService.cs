@@ -1,19 +1,22 @@
-﻿using HR_Managment.MVC.Contracts;
+﻿using AutoMapper;
+using HR_Managment.MVC.Contracts;
 using System.Net.Http.Headers;
 
 namespace HR_Managment.MVC.Services.Base
 {
-    public class BaseHttpService
+    public  class BaseHttpService
     {
-        private readonly IClient _client;
-        private readonly IlocalStorageService _localStorageService;
+        protected readonly IClient _client;
+        protected readonly IlocalStorageService _localStorageService;
+
         public BaseHttpService(IClient client, IlocalStorageService localStorageService)
         {
+            
             _client = client;
             _localStorageService = localStorageService;
         }
 
-        protected Response<Guid> ConvertApiException<Guid>(ApiException exception)
+        public Response<Guid> ConvertApiException<Guid>(ApiException exception)
         {
             if (exception.StatusCode == 400)
             {
