@@ -1,4 +1,6 @@
-﻿namespace HR_Managment.MVC.Services.Base
+﻿using System.Net.Http;
+
+namespace HR_Managment.MVC.Services.Base
 {
     public partial class Client : IClient
     {
@@ -6,9 +8,8 @@
         {
             get
             {
-                return _httpClient;
+                return HttpClient;
             }
-
         }
     }
 }

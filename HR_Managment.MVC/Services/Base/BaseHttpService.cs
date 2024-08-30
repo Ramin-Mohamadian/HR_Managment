@@ -1,54 +1,52 @@
-﻿using AutoMapper;
+﻿
 using HR_Managment.MVC.Contracts;
 using System.Net.Http.Headers;
 
 namespace HR_Managment.MVC.Services.Base
 {
-    public  class BaseHttpService
+    public class BaseHttpService
     {
         protected readonly IClient _client;
-        protected readonly IlocalStorageService _localStorageService;
+        protected readonly IlocalStorageService _localStorage;
+        private Services.IClient client;
+        private IlocalStorageService localstorageService;
 
-        public BaseHttpService(IClient client, IlocalStorageService localStorageService)
+        public BaseHttpService(IClient client, IlocalStorageService localStorage)
         {
-            
-            _client = client;
-            _localStorageService = localStorageService;
+            this._client = client;
+            this._localStorage = localStorage;
         }
 
-        public Response<Guid> ConvertApiException<Guid>(ApiException exception)
+        public BaseHttpService(Services.IClient client, IlocalStorageService localstorageService)
+        {
+            this.client = client;
+            this.localstorageService = localstorageService;
+        }
+
+        protected Response<Guid> ConvertApiExceptions<Guid>(ApiException exception)
         {
             if (exception.StatusCode == 400)
             {
-                return new Response<Guid>()
-                {
-                    Message = "Validation error have occourd.",
-                    ValidationError = exception.Response,
-                    Success = true
-                };
-
+                return new Response<Guid>() { Message = "Validation errors have occured.", ValidationErrors = exception.Response, Success = false };
             }
             else if (exception.StatusCode == 404)
             {
-                return new Response<Guid>()
-                {
-                    Message = "Not Found...",
-                    ValidationError = exception.Response,
-                    Success = false
-                };
+                return new Response<Guid>() { Message = "Not Found ...", Success = false };
             }
-            return new Response<Guid>() { };
+            else
+            {
+                return new Response<Guid>() { Message = "Somthing went wrong,try again ... ", Success = false };
+            }
         }
-
-
 
         protected void AddBearerToken()
         {
-            if (_localStorageService.Exists("Token"))
+            if(_localStorage.Exists("token"))
             {
                 _client.HttpClient.DefaultRequestHeaders.Authorization =
-                    new AuthenticationHeaderValue("Bearer", _localStorageService.GetStorageValue<string>("Token"));
+                    new AuthenticationHeaderValue("Bearer", _localStorage.GetStorageValue<string>("token"));
             }
         }
+
     }
 }

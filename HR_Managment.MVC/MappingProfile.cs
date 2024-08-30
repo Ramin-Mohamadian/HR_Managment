@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using HR_Managment.MVC.Models;
+using HR_Managment.MVC.Services;
 using HR_Managment.MVC.Services.Base;
 
 namespace HR_Managment.MVC
